@@ -1,6 +1,6 @@
 # 👋 Hi, I'm tuguang (tuguang2025)
 
-**Front-end developer from China · open to remote opportunities**
+**Front-end developer · open to remote opportunities**
 
 My repositories cover frontend work, backend templates and Web3 tooling. Everything on this page is served from this repository — no third-party image services.
 
