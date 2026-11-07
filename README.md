@@ -15,10 +15,12 @@ My repositories cover frontend work, backend templates and Web3 tooling. Everyth
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/langs-dark.svg">
-  <img alt="Most used languages by repository: Java, Python, Shell, JavaScript, HTML" src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/langs.svg" width="480">
+  <img alt="Most used languages by bytes of code: JavaScript, Java, HTML, TypeScript, Vue, CSS, Python, Shell" src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/langs.svg" width="480">
 </picture>
 
 **32** stars earned · **54** public repos · **5** followers · refreshed daily by [GitHub Actions](.github/workflows/update-stats.yml) with data from the GitHub API ([generator](scripts/gen_stats.py)).
+
+Language shares come from GitHub Linguist byte counts across my own repos (forks excluded), not just each repo's primary language.
 
 ---
 

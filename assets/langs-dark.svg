@@ -1,29 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="208" viewBox="0 0 480 208" role="img">
-<rect x="0.5" y="0.5" width="479" height="207" rx="8" fill="#0d1117" stroke="#30363d"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="288" viewBox="0 0 480 288" role="img">
+<rect x="0.5" y="0.5" width="479" height="287" rx="8" fill="#0d1117" stroke="#30363d"/>
 <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" fill="#e6edf3">
 <text x="22" y="30" font-size="15" font-weight="600">Most used languages</text>
-<text x="458" y="30" text-anchor="end" font-size="11" fill="#9198a1">17 repos with a primary language</text>
+<text x="458" y="30" text-anchor="end" font-size="11" fill="#9198a1">18 own repos with code · 2.1 MB</text>
 <line x1="22" y1="42" x2="458" y2="42" stroke="#30363d"/>
-<text x="22" y="72" font-size="12" fill="#e6edf3">Java</text>
-<rect x="130" y="62" width="290" height="12" rx="6" fill="#21262d"/>
-<rect x="130" y="62" width="290" height="12" rx="6" fill="#e76f00"/>
-<text x="458" y="72" text-anchor="end" font-size="11" fill="#9198a1">4</text>
-<text x="22" y="99" font-size="12" fill="#e6edf3">Python</text>
-<rect x="130" y="89" width="290" height="12" rx="6" fill="#21262d"/>
-<rect x="130" y="89" width="218" height="12" rx="6" fill="#3572a5"/>
-<text x="458" y="99" text-anchor="end" font-size="11" fill="#9198a1">3</text>
-<text x="22" y="126" font-size="12" fill="#e6edf3">JavaScript</text>
-<rect x="130" y="116" width="290" height="12" rx="6" fill="#21262d"/>
-<rect x="130" y="116" width="218" height="12" rx="6" fill="#d9b514"/>
-<text x="458" y="126" text-anchor="end" font-size="11" fill="#9198a1">3</text>
-<text x="22" y="153" font-size="12" fill="#e6edf3">Shell</text>
-<rect x="130" y="143" width="290" height="12" rx="6" fill="#21262d"/>
-<rect x="130" y="143" width="218" height="12" rx="6" fill="#89e051"/>
-<text x="458" y="153" text-anchor="end" font-size="11" fill="#9198a1">3</text>
-<text x="22" y="180" font-size="12" fill="#e6edf3">HTML</text>
-<rect x="130" y="170" width="290" height="12" rx="6" fill="#21262d"/>
-<rect x="130" y="170" width="145" height="12" rx="6" fill="#e34c26"/>
-<text x="458" y="180" text-anchor="end" font-size="11" fill="#9198a1">2</text>
-<text x="22" y="196" font-size="10" fill="#9198a1" opacity="0.8">Counted by primary language, not lines of code</text>
+<text x="22" y="68" font-size="12" fill="#e6edf3">JavaScript</text>
+<rect x="140" y="58" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="58" width="250" height="12" rx="6" fill="#e5c73b"/>
+<text x="458" y="68" text-anchor="end" font-size="11" fill="#9198a1">63.4%</text>
+<text x="22" y="94" font-size="12" fill="#e6edf3">Java</text>
+<rect x="140" y="84" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="84" width="82" height="12" rx="6" fill="#b07219"/>
+<text x="458" y="94" text-anchor="end" font-size="11" fill="#9198a1">20.8%</text>
+<text x="22" y="120" font-size="12" fill="#e6edf3">HTML</text>
+<rect x="140" y="110" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="110" width="15" height="12" rx="6" fill="#e34c26"/>
+<text x="458" y="120" text-anchor="end" font-size="11" fill="#9198a1">3.7%</text>
+<text x="22" y="146" font-size="12" fill="#e6edf3">TypeScript</text>
+<rect x="140" y="136" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="136" width="12" height="12" rx="6" fill="#3178c6"/>
+<text x="458" y="146" text-anchor="end" font-size="11" fill="#9198a1">3.1%</text>
+<text x="22" y="172" font-size="12" fill="#e6edf3">Vue</text>
+<rect x="140" y="162" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="162" width="12" height="12" rx="6" fill="#41b883"/>
+<text x="458" y="172" text-anchor="end" font-size="11" fill="#9198a1">3.1%</text>
+<text x="22" y="198" font-size="12" fill="#e6edf3">CSS</text>
+<rect x="140" y="188" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="188" width="11" height="12" rx="6" fill="#663399"/>
+<text x="458" y="198" text-anchor="end" font-size="11" fill="#9198a1">2.7%</text>
+<text x="22" y="224" font-size="12" fill="#e6edf3">Python</text>
+<rect x="140" y="214" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="214" width="8" height="12" rx="6" fill="#3572a5"/>
+<text x="458" y="224" text-anchor="end" font-size="11" fill="#9198a1">2.0%</text>
+<text x="22" y="250" font-size="12" fill="#e6edf3">Shell</text>
+<rect x="140" y="240" width="250" height="12" rx="6" fill="#21262d"/>
+<rect x="140" y="240" width="4" height="12" rx="6" fill="#89e051"/>
+<text x="458" y="250" text-anchor="end" font-size="11" fill="#9198a1">0.8%</text>
+<text x="22" y="274" font-size="10" fill="#9198a1" opacity="0.8">12 languages detected · top 8 shown · forks excluded · GitHub Linguist byte share</text>
 </g>
 </svg>

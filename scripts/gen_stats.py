@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 import collections
+import concurrent.futures
 import datetime
 import html
 import json
 import os
 import pathlib
+import subprocess
 import urllib.request
 
 USER = os.environ.get("GITHUB_USER", "tuguang2025")
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
-TOKEN = os.environ.get("GITHUB_TOKEN")
+TOP_N = 8
 
 THEMES = {
     "light": dict(bg="#ffffff", border="#d0d7de", fg="#1f2328", muted="#59636e", accent="#0969da", track="#eaeef2"),
@@ -18,16 +20,47 @@ THEMES = {
 }
 
 LANG_COLORS = {
-    "Java": "#e76f00",
-    "Python": "#3572a5",
-    "Shell": "#89e051",
-    "JavaScript": "#d9b514",
+    "JavaScript": "#e5c73b",
+    "Java": "#b07219",
     "HTML": "#e34c26",
     "TypeScript": "#3178c6",
-    "Solidity": "#aa6746",
     "Vue": "#41b883",
+    "CSS": "#663399",
+    "Python": "#3572a5",
+    "Shell": "#89e051",
+    "SCSS": "#c6538c",
+    "Solidity": "#aa6746",
+    "Dockerfile": "#384d54",
+    "Lua": "#3f5cbf",
+    "C": "#8a8a8a",
+    "C++": "#f34b7d",
+    "C#": "#178600",
     "Go": "#00add8",
+    "Swift": "#f05138",
+    "Kotlin": "#a97bff",
+    "PHP": "#4f5d95",
+    "Ruby": "#e05a70",
+    "Rust": "#dea584",
+    "Dart": "#00b4ab",
+    "Jupyter Notebook": "#da5b0b",
+    "Gherkin": "#8f5ba8",
+    "Move": "#7b68ee",
+    "Less": "#5a7fb5",
+    "Roff": "#b09070",
 }
+
+
+def resolve_token():
+    value = os.environ.get("GITHUB_TOKEN")
+    if value:
+        return value
+    try:
+        return subprocess.check_output(["gh", "auth", "token"], text=True, stderr=subprocess.DEVNULL).strip()
+    except Exception:
+        return None
+
+
+TOKEN = resolve_token()
 
 
 def api(path):
@@ -37,6 +70,13 @@ def api(path):
     req = urllib.request.Request("https://api.github.com" + path, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.load(resp)
+
+
+def repo_languages(repo):
+    try:
+        return api("/repos/%s/%s/languages" % (USER, repo["name"]))
+    except Exception:
+        return {}
 
 
 def fetch():
@@ -49,7 +89,16 @@ def fetch():
         if len(batch) < 100:
             break
         page += 1
-    return user, repos
+    own = [r for r in repos if not r["fork"]]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+        per_repo = list(pool.map(repo_languages, own))
+    totals = collections.Counter()
+    with_code = 0
+    for data in per_repo:
+        if data:
+            with_code += 1
+        totals.update(data)
+    return user, repos, totals, len(own), with_code
 
 
 def esc(value):
@@ -95,37 +144,39 @@ def stats_card(user, repos, theme):
     return frame(480, 180, theme, "\n".join(parts))
 
 
-def langs_card(repos, theme):
+def langs_card(totals, own_count, with_code, theme):
     fg, muted = theme["fg"], theme["muted"]
-    counts = collections.Counter(r["language"] for r in repos if r.get("language"))
-    top = counts.most_common(5)
-    labeled = sum(counts.values())
+    top = totals.most_common(TOP_N)
+    total_bytes = sum(totals.values())
     parts = [
         '<text x="22" y="30" font-size="15" font-weight="600">Most used languages</text>',
-        '<text x="458" y="30" text-anchor="end" font-size="11" fill="%s">%d repos with a primary language</text>' % (muted, labeled),
+        '<text x="458" y="30" text-anchor="end" font-size="11" fill="%s">%d own repos with code · %.1f MB</text>'
+        % (muted, with_code, total_bytes / 1048576),
         '<line x1="22" y1="42" x2="458" y2="42" stroke="%s"/>' % theme["border"],
     ]
-    for i, (lang, count) in enumerate(top):
-        y = 60 + i * 27
-        width = max(8, round(290 * count / top[0][1]))
+    for i, (lang, size) in enumerate(top):
+        y = 56 + i * 26
+        width = max(4, round(250 * size / top[0][1]))
         color = LANG_COLORS.get(lang, "#8250df")
         parts.append('<text x="22" y="%d" font-size="12" fill="%s">%s</text>' % (y + 12, fg, esc(lang)))
-        parts.append('<rect x="130" y="%d" width="290" height="12" rx="6" fill="%s"/>' % (y + 2, theme["track"]))
-        parts.append('<rect x="130" y="%d" width="%d" height="12" rx="6" fill="%s"/>' % (y + 2, width, color))
-        parts.append('<text x="458" y="%d" text-anchor="end" font-size="11" fill="%s">%d</text>' % (y + 12, muted, count))
-    parts.append('<text x="22" y="196" font-size="10" fill="%s" opacity="0.8">Counted by primary language, not lines of code</text>' % muted)
-    return frame(480, 208, theme, "\n".join(parts))
+        parts.append('<rect x="140" y="%d" width="250" height="12" rx="6" fill="%s"/>' % (y + 2, theme["track"]))
+        parts.append('<rect x="140" y="%d" width="%d" height="12" rx="6" fill="%s"/>' % (y + 2, width, color))
+        parts.append('<text x="458" y="%d" text-anchor="end" font-size="11" fill="%s">%.1f%%</text>'
+                     % (y + 12, muted, 100.0 * size / total_bytes))
+    footer = "%d languages detected · top %d shown · forks excluded · GitHub Linguist byte share" % (len(totals), len(top))
+    parts.append('<text x="22" y="274" font-size="10" fill="%s" opacity="0.8">%s</text>' % (muted, esc(footer)))
+    return frame(480, 288, theme, "\n".join(parts))
 
 
 def main():
-    user, repos = fetch()
+    user, repos, totals, own_count, with_code = fetch()
     if not ASSETS.is_dir():
         ASSETS.mkdir(parents=True)
     for name, theme in THEMES.items():
         suffix = "" if name == "light" else "-dark"
         (ASSETS / ("stats%s.svg" % suffix)).write_text(stats_card(user, repos, theme), encoding="utf-8")
-        (ASSETS / ("langs%s.svg" % suffix)).write_text(langs_card(repos, theme), encoding="utf-8")
-    print("updated stats cards for %s (%d repos)" % (USER, len(repos)))
+        (ASSETS / ("langs%s.svg" % suffix)).write_text(langs_card(totals, own_count, with_code, theme), encoding="utf-8")
+    print("updated cards for %s (%d own repos, %d languages)" % (USER, own_count, len(totals)))
 
 
 if __name__ == "__main__":
