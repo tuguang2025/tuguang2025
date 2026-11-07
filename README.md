@@ -34,12 +34,17 @@ Language shares come from GitHub Linguist byte counts across my own repos (forks
   <a href="https://vuejs.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/vue.svg" alt="Vue.js" title="Vue.js" width="40" height="40"></a>
   <a href="https://react.dev/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/react.svg" alt="React" title="React" width="40" height="40"></a>
   <a href="https://angular.dev/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/angular.svg" alt="Angular" title="Angular" width="40" height="40"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/html5.svg" alt="HTML5" title="HTML5" width="40" height="40"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/css3.svg" alt="CSS3" title="CSS3" width="40" height="40"></a>
   <a href="https://www.electronjs.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/electron.svg" alt="Electron" title="Electron" width="40" height="40"></a>
 </p>
 
-**Backend & Runtime**
+**Backend & Languages**
 
 <p>
+  <a href="https://go.dev/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/go.svg" alt="Go" title="Go (Golang)" width="40" height="40"></a>
+  <a href="https://www.python.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/python.svg" alt="Python" title="Python" width="40" height="40"></a>
+  <a href="https://www.java.com/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/java.svg" alt="Java" title="Java" width="40" height="40"></a>
   <a href="https://nodejs.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/nodejs.svg" alt="Node.js" title="Node.js" width="40" height="40"></a>
   <a href="https://nestjs.com/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/nestjs.svg" alt="NestJS" title="NestJS" width="40" height="40"></a>
 </p>
@@ -51,6 +56,7 @@ Language shares come from GitHub Linguist byte counts across my own repos (forks
   <a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40"></a>
   <a href="https://nginx.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/nginx.svg" alt="Nginx" title="Nginx" width="40" height="40"></a>
   <a href="https://www.kernel.org/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/linux.svg" alt="Linux" title="Linux" width="40" height="40"></a>
+  <a href="https://www.gnu.org/software/bash/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/bash.svg" alt="Bash / Shell" title="Bash / Shell" width="40" height="40"></a>
   <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/tuguang2025/tuguang2025/main/assets/icons/git.svg" alt="Git" title="Git" width="40" height="40"></a>
 </p>
 
