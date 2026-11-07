@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="208" viewBox="0 0 480 208" role="img">
+<rect x="0.5" y="0.5" width="479" height="207" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" fill="#1f2328">
+<text x="22" y="30" font-size="15" font-weight="600">Most used languages</text>
+<text x="458" y="30" text-anchor="end" font-size="11" fill="#59636e">17 repos with a primary language</text>
+<line x1="22" y1="42" x2="458" y2="42" stroke="#d0d7de"/>
+<text x="22" y="72" font-size="12" fill="#1f2328">Java</text>
+<rect x="130" y="62" width="290" height="12" rx="6" fill="#eaeef2"/>
+<rect x="130" y="62" width="290" height="12" rx="6" fill="#e76f00"/>
+<text x="458" y="72" text-anchor="end" font-size="11" fill="#59636e">4</text>
+<text x="22" y="99" font-size="12" fill="#1f2328">Python</text>
+<rect x="130" y="89" width="290" height="12" rx="6" fill="#eaeef2"/>
+<rect x="130" y="89" width="218" height="12" rx="6" fill="#3572a5"/>
+<text x="458" y="99" text-anchor="end" font-size="11" fill="#59636e">3</text>
+<text x="22" y="126" font-size="12" fill="#1f2328">JavaScript</text>
+<rect x="130" y="116" width="290" height="12" rx="6" fill="#eaeef2"/>
+<rect x="130" y="116" width="218" height="12" rx="6" fill="#d9b514"/>
+<text x="458" y="126" text-anchor="end" font-size="11" fill="#59636e">3</text>
+<text x="22" y="153" font-size="12" fill="#1f2328">Shell</text>
+<rect x="130" y="143" width="290" height="12" rx="6" fill="#eaeef2"/>
+<rect x="130" y="143" width="218" height="12" rx="6" fill="#89e051"/>
+<text x="458" y="153" text-anchor="end" font-size="11" fill="#59636e">3</text>
+<text x="22" y="180" font-size="12" fill="#1f2328">HTML</text>
+<rect x="130" y="170" width="290" height="12" rx="6" fill="#eaeef2"/>
+<rect x="130" y="170" width="145" height="12" rx="6" fill="#e34c26"/>
+<text x="458" y="180" text-anchor="end" font-size="11" fill="#59636e">2</text>
+<text x="22" y="196" font-size="10" fill="#59636e" opacity="0.8">Counted by primary language, not lines of code</text>
+</g>
+</svg>
